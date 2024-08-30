@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing App</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcome-screen">
+        <img src="logo.png" alt="App Logo">
+        <h1>Drawing App</h1>
+    </div>
+
+    <!-- New File Window -->
+    <div id="new-file-window" class="hidden">
+        <form id="new-file-form">
+            <label for="image-width">Width:</label>
+            <input type="number" id="image-width" name="image-width" min="1" required>
+            <label for="image-height">Height:</label>
+            <input type="number" id="image-height" name="image-height" min="1" required>
+            <label for="file-name">File Name:</label>
+            <input type="text" id="file-name" name="file-name" required>
+            <button type="submit">Create New</button>
+        </form>
+    </div>
+
+    <!-- Canvas and Toolbars -->
+    <div class="container">
+        <section class="toolbar-left">
+            <button id="brush-tool">Brush</button>
+            <button id="eraser-tool">Eraser</button>
+            <button id="move-tool">Move</button>
+            <button id="shape-tool">Shape</button>
+            <button id="color-picker">Color Picker</button>
+            <button id="paint-bucket">Paint Bucket</button>
+            <button id="text-tool">Text</button>
+            <button id="clone-stamp">Clone Stamp</button>
+            <button id="import">Import</button>
+            <button id="export">Export</button>
+
+            
+        </section>
+        
+        <section class="canvas-section">
+            <div class="toolbar-top">
+                <button id="undo">Undo</button>
+                <button id="redo">Redo</button>
+                <button id="selection-tool">Selection</button>
+            </div>
+            <canvas id="drawing-canvas"></canvas>
+        </section>
+
+        <section class="toolbar-right">
+            <!-- Tool Properties -->
+            <div id="brush-properties" class="hidden tool-properties">
+                <label for="brush-size">Size:</label>
+                <input type="range" id="brush-size" min="1" max="100" value="10">
+                <label for="brush-shape">Shape:</label>
+                <select id="brush-shape">
+                    <option value="round">Round</option>
+                    <option value="square">Square</option>
+                </select>
+                <label for="brush-opacity">Opacity:</label>
+                <select id="brush-opacity">
+                    <option value="0">0%</option>
+                    <option value="50">50%</option>
+                    <option value="100">100%</option>
+                </select>
+            </div>
+
+            <div id="eraser-properties" class="hidden tool-properties">
+                <!-- Similar to brush properties -->
+            </div>
+
+            <div id="move-properties" class="hidden tool-properties">
+                <button id="rotate-cw">Rotate CW</button>
+                <button id="rotate-ccw">Rotate CCW</button>
+                <button id="flip-horizontal">Flip Horizontal</button>
+                <button id="flip-vertical">Flip Vertical</button>
+            </div>
+
+            <div id="shape-properties" class="hidden tool-properties">
+                <label for="shape-type">Shape:</label>
+                <select id="shape-type">
+                    <option value="circle">Circle</option>
+                    <option value="square">Square</option>
+                    <option value="rectangle">Rectangle</option>
+                    <option value="line">Line</option>
+                </select>
+            </div>
+
+            <div id="color-picker-properties" class="hidden tool-properties">
+                <input type="color" id="color-picker-input">
+            </div>
+
+            <div id="text-properties" class="hidden tool-properties">
+                <label for="text-typeface">Typeface:</label>
+                <select id="text-typeface">
+                    <option value="Arial">Arial</option>
+                    <option value="Courier New">Courier New</option>
+                    <!-- Add more typefaces -->
+                </select>
+                <label for="text-size">Size:</label>
+                <input type="number" id="text-size" min="8" max="200" value="16">
+                <label for="text-style">Style:</label>
+                <select id="text-style">
+                    <option value="normal">Normal</option>
+                    <option value="bold">Bold</option>
+                    <option value="italic">Italic</option>
+                    <option value="underline">Underline</option>
+                </select>
+            </div>
+            <div id="layer-stack">
+                <!-- Layer controls will be added here -->
+            </div>
+        </section>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

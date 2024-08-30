@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard Template</title>
+    <link rel="stylesheet" href="../css/styleAdmin.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="../assets/component/WEBTECHID_LOGO.png" alt="">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>Name</li>
+                </ul>
+            </div>
+            <div class="hamburger" onclick="toggleSidebar()">
+                &#9776;
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+        <ul class="sidebar-menu">
+            <li><a href="admin.html">Dashboard</a></li>
+            <li><a href="index.html">Index</a></li>
+            <li><a href="adminblog.html">blogs</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="content">
+            <h1>Admin Page</h1>
+            <p>Welcome to the admin.</p>
+            <div class="charts">
+                <div class="chart-container">
+                    <h2>Bar Chart 1</h2>
+                    <canvas id="barChart1" width="400" height="300"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h2>Bar Chart 2</h2>
+                    <canvas id="barChart2" width="400" height="300"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h2>Bar Chart 3</h2>
+                    <canvas id="barChart3" width="400" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
